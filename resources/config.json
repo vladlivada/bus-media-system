@@ -1,6 +1,6 @@
 {
 	"rtpi": {
-		"host": "https://192.168.64.1:8095",
+		"host": "https://bms-rtpi-mock.herokuapp.com",
 		"endpoint": "/api/obu/rtpi",
 		"headers": {
 			"X-Device-Id" : "device-id",
