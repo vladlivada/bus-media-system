@@ -1,0 +1,25 @@
+<script>
+  const handleMessages = () => {
+    console.log('handle');
+    const videoPlayer = $('#videoplayer');
+    const nextStation = $('#next-station-message');
+    nextStation.hide();
+    const ws = new WebSocket("ws://" + location.host);
+    ws.addEventListener("open", () => {
+      console.log('opened');
+    });
+    ws.addEventListener('message', (message) => {
+      videoPlayer.hide();
+      console.log(message);
+      nextStation.html(message.data);
+      nextStation.show();
+      videoPlayer.get(0).pause();
+      videoPlayer.get(0).currentTime = 0;
+      setTimeout(() => {
+        videoPlayer.show();
+        videoPlayer.get(0).play();
+        nextStation.hide();
+      }, 3000);
+    })
+  }
+</script>

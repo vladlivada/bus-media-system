@@ -1,0 +1,28 @@
+body {
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  background: #000 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+#videoplayer {
+  width: 100vw;
+  height: auto;
+}
+
+#next-station-message {
+  display: block;
+  color: white;
+  font-size: 10em;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

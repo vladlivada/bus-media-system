@@ -1,0 +1,44 @@
+<script>
+    const initVideoPlayback = (playlist) => {
+        if (!playlist) {
+            throw "No playlist provided";
+        }
+        let currentIndex = 0;
+        const playlistSize = playlist.length
+        const player = $("#videoplayer").get(0);
+
+        const videoPlay = (videoNum) => {
+            player.setAttribute("src", playlist[videoNum]);
+            player.autoplay = true;
+            player.load();
+        }
+
+        const playbackHandler = () => {
+            currentIndex++;
+            if (currentIndex == playlistSize) {
+                currentIndex = 0;
+                videoPlay(currentIndex);
+            } else {
+                videoPlay(currentIndex);
+            }
+        }
+
+        const checkIfVideoPlays = () => {
+
+            if (!player) return;
+
+            const promise = player.play();
+            if (promise !== undefined) {
+                promise.then(() => {
+                }).catch(error => {
+                    video.play();
+                });
+            }
+        }
+        player.addEventListener('ended', playbackHandler)
+
+        videoPlay(0);
+        checkIfVideoPlays();
+
+    }
+</script>

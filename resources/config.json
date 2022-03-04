@@ -1,0 +1,58 @@
+{
+	"rtpi": {
+		"host": "https://192.168.64.1:8095",
+		"endpoint": "/api/obu/rtpi",
+		"headers": {
+			"X-Device-Id" : "device-id",
+			"X-Device-Model": "device-model"
+		},
+		"pollIntervalMs": 5000
+	},
+	"alerts" : {
+		"minAlertTimeMs": 30000,
+		"mapping" : {
+			"197" : {
+				"text": "Urmeaza statia Gara de nord",
+				"audio": "/assets/alerts/197_gara_de_nord.mp3"
+			},
+			"198" : {
+				"text": "Urmeaza statia Victoriei",
+				"audio": "/assets/alerts/198_victoriei.mp3"
+			},
+			"199" : {
+				"text": "Urmeaza statia Stefan cel Mare",
+				"audio": "/assets/alerts/199_stefan_cel_mare.mp3"
+			},
+			"200" : {
+				"text": "Urmeaza statia Obor",
+				"audio": "/assets/alerts/200_obor.mp3"
+			},
+			"201" : {
+				"text": "Urmeaza statia Iancului",
+				"audio": "/assets/alerts/201_iancului.mp3"
+			},
+			"202" : {
+				"text": "Urmeaza statia Muncii",
+				"audio": "/assets/alerts/202_muncii.mp3"
+			},
+			"203" : {
+				"text": "Urmeaza statia Dristor 2",
+				"audio": "/assets/alerts/201_dristor_2.mp3"
+			}
+		}
+	},
+	"playlist" : [
+		{
+			"index": 0,
+			"src": "/assets/big-buck-bunny_trailer.webm"
+		},
+		{
+			"index": 1,
+			"src": "/assets/file_example_WEBM_1280_3_6MB.webm"
+		},
+		{
+			"index": 2,
+			"src": "/assets/sample_1280x720.webm"
+		}
+	]
+}
