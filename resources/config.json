@@ -9,7 +9,7 @@
 		"pollIntervalMs": 5000
 	},
 	"alerts" : {
-		"minAlertTimeMs": 30000,
+		"minAlertTimeMs": 10000,
 		"mapping" : {
 			"197" : {
 				"text": "Urmeaza statia Gara de nord",
@@ -37,7 +37,7 @@
 			},
 			"203" : {
 				"text": "Urmeaza statia Dristor 2",
-				"audio": "/assets/alerts/201_dristor_2.mp3"
+				"audio": "/assets/alerts/203_dristor_2.mp3"
 			}
 		}
 	},
