@@ -23,7 +23,6 @@ initSocket(server);
 let lastAlertStop = null;
 
 setInterval(() => {  
-
   axios
     .get(globalConfig.rtpi.host + globalConfig.rtpi.endpoint)
     .then(res => {
@@ -35,11 +34,10 @@ setInterval(() => {
           lastAlertStop = lastStop;
           let nextStop = rtpidata.times.find(s => s.index === lastStop.index + 1);
           if (nextStop) {
-            console.log("urmeaza statia " + nextStop.stop.name);
-            sendMessage({
+            sendMessage(JSON.stringify({
               type: "station",
               id: nextStop.stop.code
-            })
+            }))
           }
         }
       }

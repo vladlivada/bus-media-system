@@ -1,6 +1,9 @@
 <script>
-  const handleMessages = () => {
-    console.log('handle');
+  const handleMessages = (alerts) => {
+    const {
+      mapping,
+      minAlertTimeMs
+    } = alerts;
     const videoPlayer = $('#videoplayer');
     const nextStation = $('#next-station-message');
     nextStation.hide();
@@ -9,17 +12,27 @@
       console.log('opened');
     });
     ws.addEventListener('message', (message) => {
+      const receivedMessage = JSON.parse(message.data);
       videoPlayer.hide();
-      console.log(message);
-      nextStation.html(message.data);
-      nextStation.show();
-      videoPlayer.get(0).pause();
-      videoPlayer.get(0).currentTime = 0;
-      setTimeout(() => {
-        videoPlayer.show();
-        videoPlayer.get(0).play();
-        nextStation.hide();
-      }, 3000);
+      if (receivedMessage.type === 'station') {
+        const {
+          text,
+          audio
+        } = mapping[receivedMessage.id]
+        nextStation.html(text);
+        nextStation.show();
+        videoPlayer.get(0).pause();
+        videoPlayer.get(0).currentTime = 0;
+        playAudioFile(audio).then((duration) => {
+          const audioTimeMs = Math.ceil(duration) * 1000
+          const alertTime =  audioTimeMs > minAlertTimeMs ? audioTimeMs : minAlertTimeMs;
+          setTimeout(() => {
+            videoPlayer.show();
+            videoPlayer.get(0).play();
+            nextStation.hide();
+          }, alertTime);
+        })
+      }
     })
   }
 </script>
