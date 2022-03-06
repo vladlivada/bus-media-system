@@ -1,0 +1,12 @@
+<script>
+    const playAudioFile = (audioSource) => {
+        const audioPlayer = $('#audioplayer').get(0);
+        return new Promise((resolve, reject) => {
+            audioPlayer.setAttribute("src", audioSource);
+            audioPlayer.load();
+            audioPlayer.play().then(() => {
+                resolve($('#audioplayer').get(0).duration);
+            });
+        });
+    }
+</script>

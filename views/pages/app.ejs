@@ -1,8 +1,9 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="/js/jquery-3.6.0.slim.min.js"></script>
 
 <%- include ("message-handler.ejs") %>
 <%- include ("video-playback.ejs") %>
+<%- include ("audio-playback.ejs") %>
+
 <script>
   $(document).ready(() => {
     window._config = {};
@@ -10,7 +11,9 @@
     window._config.alerts = JSON.parse('<%- JSON.stringify(alerts) %>');
 
     let playlist = window._config.playlist.sort((a, b) => a.index < b.index).map(x => x.src);
-    handleMessages();
+    let alerts = window._config.alerts;
+
+    handleMessages(alerts);
     initVideoPlayback(playlist);
   })
 </script>
