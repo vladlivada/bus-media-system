@@ -9,6 +9,7 @@ module.exports = {
         if (!connectionSocket) {
             ws.on('connection', (socket) => {
                 connectionSocket = socket;
+                setInterval(() => connectionSocket.send(JSON.stringify({type: 'heartbeat'})), 5000)
             });
             ws.on('close', (err) => {
                 console.error("WS connection closed", err);

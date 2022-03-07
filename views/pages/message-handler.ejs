@@ -19,8 +19,8 @@
     });
     ws.addEventListener('message', (message) => {
       const receivedMessage = JSON.parse(message.data);
-      videoPlayer.hide();
       if (receivedMessage.type === 'station') {
+        videoPlayer.hide();
         const {
           text,
           audio
