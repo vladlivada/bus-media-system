@@ -34,6 +34,7 @@ setInterval(() => {
           lastAlertStop = lastStop;
           let nextStop = rtpidata.times.find(s => s.index === lastStop.index + 1);
           if (nextStop) {
+            console.log("Sending new stop" + nextStop.stop.name);
             sendMessage(JSON.stringify({
               type: "station",
               id: nextStop.stop.code

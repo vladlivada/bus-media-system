@@ -11,6 +11,12 @@
     ws.addEventListener("open", () => {
       console.log('opened');
     });
+    ws.addEventListener("close", (e) => {
+      console.error("WS connection closed", e);
+    });
+    ws.addEventListener("error", (err) => {
+      console.error("WS connection error", err);
+    });
     ws.addEventListener('message', (message) => {
       const receivedMessage = JSON.parse(message.data);
       videoPlayer.hide();
