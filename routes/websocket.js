@@ -9,7 +9,13 @@ module.exports = {
         if (!connectionSocket) {
             ws.on('connection', (socket) => {
                 connectionSocket = socket;
-            })
+            });
+            ws.on('close', (err) => {
+                console.error("WS connection closed", err);
+            });
+            ws.on('error', (err) => {
+                console.error("WS connection error", err);
+            });
         }
     },
     sendMessage: (message) => {
