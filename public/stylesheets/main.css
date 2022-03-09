@@ -2,7 +2,7 @@ body {
   padding: 0 !important;
   margin: 0 !important;
   overflow: hidden !important;
-  background: #000 !important;
+  background: white !important;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,9 +20,20 @@ body {
   color: white;
   font-size: 6em;
   text-align: center;
+  text-transform: uppercase;
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: Bodoni;
+  background: #D2386C;
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: 1560bd;
+  font-weight: bold;
+  border-radius: 10px 100px / 120px;
+  width: auto;
+  height: auto;
+  padding: 5px 30px 5px 30px;
 }
