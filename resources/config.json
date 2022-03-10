@@ -53,6 +53,18 @@
 		{
 			"index": 2,
 			"src": "/assets/sample_1280x720.webm"
+		},
+		{
+			"index": 3,
+			"src": "/assets/video1.mp4"
+		},
+		{
+			"index": 4,
+			"src": "/assets/video2.mp4"
+		},
+		{
+			"index": 5,
+			"src": "/assets/video5.mp4"
 		}
 	]
 }
