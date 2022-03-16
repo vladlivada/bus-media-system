@@ -12,31 +12,39 @@
 		"minAlertTimeMs": 10000,
 		"mapping" : {
 			"197" : {
-				"text": "Urmeaza statia Gara de nord",
+				"guidanceText": "Urmeaza statia",
+				"value": "Gara de nord",
+				"optional": "Legatura cu Piata victoriei",
 				"audio": "/assets/alerts/197_gara_de_nord.mp3"
 			},
 			"198" : {
-				"text": "Urmeaza statia Victoriei",
+				"guidanceText": "Urmeaza statia",
+				"value": "Victoriei",
 				"audio": "/assets/alerts/198_victoriei.mp3"
 			},
 			"199" : {
-				"text": "Urmeaza statia Stefan cel Mare",
+				"guidanceText": "Urmeaza statia",
+				"value": "Stefan cel Mare",
 				"audio": "/assets/alerts/199_stefan_cel_mare.mp3"
 			},
 			"200" : {
-				"text": "Urmeaza statia Obor",
+				"guidanceText": "Urmeaza statia",
+				"value": "Obor",
 				"audio": "/assets/alerts/200_obor.mp3"
 			},
 			"201" : {
-				"text": "Urmeaza statia Iancului",
+				"guidanceText": "Urmeaza statia",
+				"value": "Iancului",
 				"audio": "/assets/alerts/201_iancului.mp3"
 			},
 			"202" : {
-				"text": "Urmeaza statia Muncii",
+				"guidanceText": "Urmeaza statia",
+				"value": "Muncii",
 				"audio": "/assets/alerts/202_muncii.mp3"
 			},
 			"203" : {
-				"text": "Urmeaza statia Dristor 2",
+				"guidanceText": "Urmeaza statia",
+				"value": "Dristor 2",
 				"audio": "/assets/alerts/203_dristor_2.mp3"
 			}
 		}
