@@ -2,7 +2,7 @@ body {
   padding: 0 !important;
   margin: 0 !important;
   overflow: hidden !important;
-  background: white !important;
+  background: #000 !important;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,8 +17,11 @@ body {
 
 #next-station-message {
   display: block;
-  color: white;
-  font-size: 6em;
+  color: black;
+  background: white;
+  border: 15px solid black;
+  box-sizing: border-box;
+  font-size: 10vmin;
   text-align: center;
   text-transform: uppercase;
   width: 100vw;
@@ -26,14 +29,26 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   font-family: Bodoni;
-  background: #D2386C;
   overflow: hidden;
   white-space: nowrap;
-  background-color: 1560bd;
   font-weight: bold;
-  border-radius: 10px 100px / 120px;
-  width: auto;
-  height: auto;
-  padding: 5px 30px 5px 30px;
+  height: 100%;
+}
+
+#next-station-message>div {
+  word-break: break-word;
+  display: inline-block;
+  white-space: normal;
+  line-height: 90px;
+}
+
+.optional {
+  position: absolute;
+  bottom: 15px;
+  font-size: 5vmin;
+  width: 100%;
+  background: black;
+  color: white;
 }

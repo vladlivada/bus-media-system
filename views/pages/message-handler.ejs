@@ -22,16 +22,23 @@
       if (receivedMessage.type === 'station') {
         videoPlayer.hide();
         const {
-          text,
+          guidanceText,
+          value,
+          optional,
           audio
         } = mapping[receivedMessage.id]
-        nextStation.html(text);
+
+        let htmlMessage = `<div class="guidance-text">${guidanceText}</div>
+                           <div class="value">${value}</div>` +
+          (optional != null ? `<div class="optional">${optional}</div>` : '');
+
+        nextStation.html(htmlMessage);
         nextStation.show();
         videoPlayer.get(0).pause();
         videoPlayer.get(0).currentTime = 0;
         playAudioFile(audio).then((duration) => {
           const audioTimeMs = Math.ceil(duration) * 1000
-          const alertTime =  audioTimeMs > minAlertTimeMs ? audioTimeMs : minAlertTimeMs;
+          const alertTime = audioTimeMs > minAlertTimeMs ? audioTimeMs : minAlertTimeMs;
           setTimeout(() => {
             videoPlayer.show();
             videoPlayer.get(0).play();
